@@ -36,6 +36,22 @@ export const constantRoutes = [
     component: () => import('@/views/login/index'),
     hidden: true
   },
+  {
+    path: '/find',
+    component: () => import('@/views/getPassword/index'),
+    hidden: true
+  },
+  {
+    path: '/myprofile',
+    component: Layout,
+    redirect: '/myprofile',
+    children: [{
+      path: 'myprofile',
+      name: 'myprofile',
+      component: () => import('@/views/myprofile/index'),
+      meta: { title: 'myprofile', icon: 'dashboard' }
+    }]
+  },
 
   {
     path: '/404',
